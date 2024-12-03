@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { generateRandom4DigitString } from "./utils";
+import { generateRandomSixDigitNumber } from "./utils";
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
@@ -27,7 +27,7 @@ async function register(fullName, email) {
     };
   }
 
-  const regId = `WIT-${generateRandom4DigitString()}`;
+  const regId = `WIT-${generateRandomSixDigitNumber()}`;
   try {
     const body = { full_name: fullName, email, reg_id: regId };
     const { error } = await supabase.from("signups").insert([body]).select();
