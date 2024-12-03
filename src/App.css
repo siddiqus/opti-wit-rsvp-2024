@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url('./assets/wit.png') no-repeat center center fixed;
+  background: url('./assets/wit-2.png') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -112,6 +112,9 @@ input:focus {
 @media (min-width: 1024px) {
   .container {
     padding: 40px;
+    position: absolute;
+    right: 150px;
+    top: 100px;
   }
 
   h1 {
