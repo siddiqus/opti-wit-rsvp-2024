@@ -97,7 +97,7 @@ const HomePage = () => {
             <h3 style={{ color: "#555" }}>
               Please RSVP to confirm your attendance!
             </h3>
-            <p style={{ color: "#777" }}>
+            <p style={{ color: "#ba0505" }}>
               After you submit this form, you will be given a registration ID.
               You will need to present at the office reception before entering
               the event.
