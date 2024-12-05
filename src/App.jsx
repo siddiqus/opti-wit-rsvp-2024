@@ -82,6 +82,8 @@ const HomePage = () => {
     }
   };
 
+  const isOpen = false;
+
   return (
     <div className="container">
       <div style={{ color: "white", fontWeight: "bold", fontStyle: "italic" }}>
@@ -91,70 +93,80 @@ const HomePage = () => {
       <div style={{ color: "white", marginBottom: "20px" }}>
         Dec 8, Sunday 4:30 PM @ Optimizely Dhaka
       </div>
-      <form onSubmit={handleSubmit} className="form">
-        {!statusMessage && (
-          <div>
-            <h3 style={{ color: "#555" }}>
-              Please RSVP to confirm your attendance!
-            </h3>
-            <p style={{ color: "#ba0505" }}>
-              After you submit this form, you will be given a registration ID,
-              which you will need to show at the office reception before
-              entering the event.
-            </p>
-            <br />
+      {!isOpen && (
+        <h2 className="form">
+          Registration is currently closed. We are at max capacity of
+          seats. Thank you for your interest!
+        </h2>
+      )}
+      {isOpen && (
+        <form onSubmit={handleSubmit} className="form">
+          {!statusMessage && (
+            <div>
+              <h3 style={{ color: "#555" }}>
+                Please RSVP to confirm your attendance!
+              </h3>
+              <p style={{ color: "#ba0505" }}>
+                After you submit this form, you will be given a registration ID,
+                which you will need to show at the office reception before
+                entering the event.
+              </p>
+              <br />
+            </div>
+          )}
+
+          <div className="form-group">
+            <label htmlFor="name">Your Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              readOnly={statusMessage}
+              className={statusMessage ? "disabled-input" : ""}
+            />
           </div>
-        )}
+          <div className="form-group">
+            <label htmlFor="email">Your Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              readOnly={statusMessage || urlEmail}
+              className={statusMessage || urlEmail ? "disabled-input" : ""}
+            />
+          </div>
+          <div style={{ marginTop: "20px" }}></div>
 
-        <div className="form-group">
-          <label htmlFor="name">Your Full Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your full name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            readOnly={statusMessage}
-            className={statusMessage ? "disabled-input" : ""}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Your Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            readOnly={statusMessage || urlEmail}
-            className={statusMessage || urlEmail ? "disabled-input" : ""}
-          />
-        </div>
-        <div style={{ marginTop: "20px" }}></div>
+          {!statusMessage && (
+            <button type="submit" className="submit-button" disabled={loading}>
+              {loading ? "Loading..." : "Submit"}
+            </button>
+          )}
 
-        {!statusMessage && (
-          <button type="submit" className="submit-button" disabled={loading}>
-            {loading ? "Loading..." : "Submit"}
-          </button>
-        )}
-
-        {statusMessage && (
-          <h2>
-            <p className="status-message font-color-primary">{statusMessage}</p>
-          </h2>
-        )}
-        {errorMessage && (
-          <h4>
-            <p className="status-message" style={{ color: "red" }}>
-              {errorMessage}
-            </p>
-          </h4>
-        )}
-      </form>
+          {statusMessage && (
+            <h2>
+              <p className="status-message font-color-primary">
+                {statusMessage}
+              </p>
+            </h2>
+          )}
+          {errorMessage && (
+            <h4>
+              <p className="status-message" style={{ color: "red" }}>
+                {errorMessage}
+              </p>
+            </h4>
+          )}
+        </form>
+      )}
     </div>
   );
 };
