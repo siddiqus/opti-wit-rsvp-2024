@@ -34,6 +34,14 @@ h2 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  width: 800px;
+  height: 600px;
+  border-radius: 4px;
+}
+
 .form-group {
   margin-bottom: 15px;
   text-align: left;

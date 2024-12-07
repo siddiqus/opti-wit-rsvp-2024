@@ -5,6 +5,7 @@ import QuestionForm from "./components/QuestionForm";
 import RsvpForm from "./components/RsvpForm";
 
 import "./App.css"; // For styling
+import WordCloud from "./components/WordCloud";
 
 const HomePage = () => {
   return (
@@ -29,6 +30,11 @@ const HomePage = () => {
           </Route>
           <Route path="/questions/:id">
             <QuestionForm />
+          </Route>
+
+          <Route path="/admin/results/:id">
+            <AdminHeader />
+            <WordCloud />
           </Route>
         </Switch>
       </div>

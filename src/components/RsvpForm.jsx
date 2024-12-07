@@ -116,7 +116,7 @@ const RsvpForm = ({ isOpen }) => {
               onChange={handleChange}
               required
               readOnly={statusMessage}
-              className={"input " + statusMessage ? "disabled-input" : ""}
+              className={"input " + (statusMessage ? "disabled-input" : "")}
             />
           </div>
           <div className="form-group">
@@ -131,7 +131,7 @@ const RsvpForm = ({ isOpen }) => {
               required
               readOnly={statusMessage || urlEmail}
               className={
-                "input " + statusMessage || urlEmail ? "disabled-input" : ""
+                "input " + (statusMessage || urlEmail ? "disabled-input" : "")
               }
             />
           </div>

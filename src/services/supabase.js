@@ -65,8 +65,27 @@ async function answerQuestion(questionId, answerText) {
   }
 }
 
+async function getAnswers(questionId) {
+  try {
+    const { data, error } = await supabase
+      .from("answers")
+      .select()
+      .eq("question_id", questionId);
+
+    return {
+      data,
+      error,
+    };
+  } catch (error) {
+    return {
+      error,
+    };
+  }
+}
+
 export const apiClient = {
   register,
   isExistingEmail,
   answerQuestion,
+  getAnswers,
 };
