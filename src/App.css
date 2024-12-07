@@ -27,7 +27,6 @@ h2 {
 }
 
 .form {
-  width: 100%;
   max-width: 400px;
   background-color: #fff;
   padding: 20px;
@@ -47,7 +46,7 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+.input {
   width: 100%;
   padding: 10px;
   font-size: 14px;
@@ -128,4 +127,16 @@ input:focus {
   .form {
     max-width: 500px;
   }
+}
+
+.admin-navbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.admin-navbar a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
 }
