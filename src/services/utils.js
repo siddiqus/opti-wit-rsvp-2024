@@ -73,6 +73,11 @@ const additionalFillerWords = [
   "or",
   "can",
   "job",
+  "having",
+  "was",
+  "is",
+  "will",
+  "not"
 ];
 
 const fillerWords = ["is", "and", "the", "a", "to", "of", "in"]; // Common filler words
