@@ -61,7 +61,18 @@ const additionalFillerWords = [
   "sometimes",
   "being",
   "into",
-  "to"
+  "to",
+  "for",
+  "so",
+  "what",
+  "face",
+  "as",
+  "an",
+  "from",
+  "also",
+  "or",
+  "can",
+  "job",
 ];
 
 const fillerWords = ["is", "and", "the", "a", "to", "of", "in"]; // Common filler words
