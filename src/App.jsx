@@ -23,7 +23,7 @@ const HomePage = () => {
 
         <Switch>
           <Route exact path="/">
-            <RsvpForm isOpen={true} />
+            <RsvpForm isOpen={false} />
           </Route>
           <Route exact path="/admin">
             <AdminHeader />
