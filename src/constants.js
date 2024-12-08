@@ -5,10 +5,10 @@ export const questions = [
   },
   {
     id: 2,
-    text: "What do you consider the biggest work-life balance challenge you’ve faced compared to your male counterparts?",
+    text: "What is one word or phrase that currently defines your approach to work-life balance?",
   },
   {
     id: 3,
-    text: "What is a struggle you have faced as a woman in tech?",
+    text: "What is a struggle women face at work that men don't?",
   },
 ];

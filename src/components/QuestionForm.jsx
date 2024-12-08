@@ -54,8 +54,8 @@ export default function QuestionForm() {
     <div>
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
-          <label htmlFor="name">{questionText}</label>
-          <div style={{ marginTop: "10px" }}></div>
+          <label htmlFor="name"><b>{questionText}</b></label>
+          <div style={{ marginTop: "20px" }}></div>
           <textarea
             name="question"
             placeholder="Enter your answer here"
